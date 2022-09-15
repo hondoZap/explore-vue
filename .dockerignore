@@ -1,0 +1,13 @@
+.editorconfig
+.git
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+packages
+**/.vs
+*.bat
+**/*.user
+**/obj
+**/bin
+**/configuration.json
+**/node_modules

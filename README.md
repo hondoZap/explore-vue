@@ -1,1 +1,1 @@
-# template-repo
+# project-template

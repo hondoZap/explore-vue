@@ -1,0 +1,44 @@
+name: ProjectTemplate
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  SERVICE_NAME: web
+  CONTEXT_NAME: project-template
+  COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
+  VERSION: 0.0.0.${{ github.run_number }}
+
+jobs:
+  build:
+    name: Build
+
+    runs-on: [Linux, self-hosted]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: docker-compose build
+
+      - name: Download Labretto config
+        run: ~/labatt_configuration/get_configuration.sh ${SERVICE_NAME} ${CONTEXT_NAME}
+
+      - name: Test
+        run: docker-compose run tests
+
+      - name: Clean up Labretto config
+        if: always()
+        run: |
+          rm -rf configuration
+
+      - name: Upload test results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: NUnit Test Results
+          path: "**/*.trx"
+          reporter: dotnet-trx
+          fail-on-error: false

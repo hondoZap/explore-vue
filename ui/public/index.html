@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= process.env.APP_NAME %></title>
+    <style>
+      @keyframes delayed-show {
+        to {
+          visibility: visible;
+        }
+      }
+  
+      .delayed-show {
+        font-size: 2rem;
+        visibility: hidden;
+        animation: 0s linear 2s forwards delayed-show;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= process.env.APP_NAME %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+      <div class="delayed-show">
+        <p>Your app is out of date</p>
+        <a href="#" onclick="window.location.reload(true); return false">
+          Click here to refresh
+        </a>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

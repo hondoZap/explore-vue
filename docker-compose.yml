@@ -1,0 +1,18 @@
+version: "3.4"
+
+x-base-build: &base-build
+  context: .
+  args:
+    - DOCKER_REGISTRY
+    - VERSION
+
+services:
+  web:
+    build: *base-build
+  tests:
+    build:
+      <<: *base-build
+      target: api
+    command: bash -c 'dotnet test --no-restore --no-build --verbosity normal ; chmod 777 -R TestResults'
+    volumes:
+      - ./api/TestResults:/src/TestResults
