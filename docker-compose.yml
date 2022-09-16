@@ -7,7 +7,7 @@ x-base-build: &base-build
     - VERSION
 
 services:
-  web:
+  template-web:
     build: *base-build
   tests:
     build:

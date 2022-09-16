@@ -14,7 +14,7 @@ x-base: &base
     - labatt:/labatt
 
 services:
-  web:
+  template-web:
     <<: *base
     ports:
       - 8000:8000

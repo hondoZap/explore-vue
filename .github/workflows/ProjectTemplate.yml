@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  SERVICE_NAME: web
+  SERVICE_NAME: template-web
   CONTEXT_NAME: project-template
   COMPOSE_FILE: docker-compose.yml:docker-compose.ci.yml
   VERSION: 0.0.0.${{ github.run_number }}

@@ -8,7 +8,7 @@
 : ${NO_CACHE:=false}
 
 export CONTEXT_NAME=project-template
-export SERVICE_NAME=web
+export SERVICE_NAME=template-web
 export VERSION
 
 trap 'rm -rf configuration' EXIT
