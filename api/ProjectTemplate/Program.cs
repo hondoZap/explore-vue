@@ -24,6 +24,7 @@ builder.Services.Configure<LabattAuthorizationServiceOptions>(options =>
 
 var app = builder.Build();
 app.UseLabatt();
+app.MapGet("/login", ctx => { ctx.Response.Redirect("/"); return Task.CompletedTask; });
 app.UseHealthChecks("/meta/status");
 
 app.Run();
