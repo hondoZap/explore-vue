@@ -5,6 +5,8 @@ using ProjectTemplate.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddLabatt();
+
+builder.Services.AddLabatt(useNewtonsoftJson: false);
 builder.Services.AddHealthChecks();
 
 builder.Services.AddDbContext<ProjectTemplateContext>((services, options) =>
