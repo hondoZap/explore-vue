@@ -6,8 +6,7 @@ using ProjectTemplate.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 builder.AddLabatt();
 
-builder.Services.AddLabatt(useNewtonsoftJson: false);
-builder.Services.AddHealthChecks();
+builder.Services.AddLabatt();
 
 builder.Services.AddDbContext<ProjectTemplateContext>((services, options) =>
 {
@@ -27,7 +26,6 @@ builder.Services.Configure<LabattAuthorizationServiceOptions>(options =>
 var app = builder.Build();
 app.UseLabatt();
 app.MapGet("/login", ctx => { ctx.Response.Redirect("/"); return Task.CompletedTask; });
-app.UseHealthChecks("/meta/status");
 
 app.Run();
 
