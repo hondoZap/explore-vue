@@ -27,11 +27,23 @@
     <div id="app">
       <div class="delayed-show">
         <p>Something went wrong.</p>
-        <a href="#" onclick="window.location.href = '/login' + window.location.hash; return false">
+        <a href="#" onclick="forceReloadApp()">
           - Click here to log in -
         </a>
       </div>
     </div>
     <!-- built files will be auto injected -->
+
+    <script>
+      async function forceReloadApp() {
+        const regs = await navigator.serviceWorker.getRegistrations()
+        for (const r of regs) {
+          await r.unregister()
+        }
+        window.location.href = '/login' + window.location.hash
+        return false
+      }
+    </script>
+  </body>
   </body>
 </html>
