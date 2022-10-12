@@ -23,6 +23,9 @@ builder.Services.Configure<LabattAuthorizationServiceOptions>(options =>
     options.EnableAutoRbacPrefixes = true;
 });
 
+builder.Services.AddHealthChecks()
+    .AddDbContextMigrationCheck<ProjectTemplateContext>();
+
 var app = builder.Build();
 app.UseLabatt();
 app.MapGet("/login", ctx => { ctx.Response.Redirect("/"); return Task.CompletedTask; });
