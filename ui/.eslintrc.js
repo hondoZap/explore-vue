@@ -15,7 +15,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/type-annotation-spacing': ['warn'],
-    '@vue/valid-v-slot': 'off',
+    'vue/valid-v-slot': ['error', { allowModifiers: true }],
     'comma-dangle': ['warn', 'always-multiline'],
     'indent': ['error', 2],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
