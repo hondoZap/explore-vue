@@ -16,15 +16,15 @@ trap 'rm -rf configuration' EXIT
 # set up build.properties for Labretto deploy
 if $CI; then
   echo "\
-VERSION = ${VERSION}
-CONTEXT_NAME = ${CONTEXT_NAME}
-SERVICE_NAME = ${SERVICE_NAME}" > ${WORKSPACE}/build.properties
+VERSION = $VERSION
+CONTEXT_NAME = $CONTEXT_NAME
+SERVICE_NAME = $SERVICE_NAME" > "$WORKSPACE"/build.properties
 fi
 
 if $RUN_TESTS && $CI; then
   # get Labatt configuration and test
   mkdir configuration
-  ~/labatt_configuration/get_configuration.sh ${SERVICE_NAME} ${CONTEXT_NAME}
+  ~/labatt_configuration/get_configuration.sh "$SERVICE_NAME" "$CONTEXT_NAME"
 fi & GET_CONFIG=$!
 
 # build all images
