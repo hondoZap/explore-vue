@@ -15,17 +15,19 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/type-annotation-spacing': ['warn'],
-    'vue/valid-v-slot': ['error', { allowModifiers: true }],
+    'brace-style': ['warn', '1tbs'],
     'comma-dangle': ['warn', 'always-multiline'],
-    'indent': ['error', 2],
+    'curly': ['warn', 'all'],
+    'indent': ['warn', 2],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-trailing-spaces': 'error',
+    'no-trailing-spaces': 'warn',
     'no-useless-rename': ['warn'],
     'no-var': ['warn'],
     'object-shorthand': ['warn'],
     'quotes': ['warn', 'single', { avoidEscape: true }],
     'semi': ['warn', 'never'],
+    'vue/valid-v-slot': ['error', { allowModifiers: true }],
   },
 }
 
