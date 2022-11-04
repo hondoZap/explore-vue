@@ -21,6 +21,7 @@ module.exports = {
     'indent': ['warn', 2],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-multi-spaces': ['warn'],
     'no-trailing-spaces': 'warn',
     'no-useless-rename': ['warn'],
     'no-var': ['warn'],
