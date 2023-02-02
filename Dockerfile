@@ -28,7 +28,7 @@ RUN npm ci
 
 COPY --from=ui-cache /src ./
 ARG VERSION
-RUN VUE_APP_VERSION="$VERSION" npm run build
+RUN VITE_APP_VERSION="$VERSION" npm run build
 
 FROM $DOCKER_REGISTRY/dotnet-aspnet-6.0
 COPY --from=api /publish /app
