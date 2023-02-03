@@ -19,6 +19,7 @@ module.exports = {
     'eqeqeq': ['warn'],
     'indent': ['warn', 2],
     'no-multi-spaces': ['warn'],
+    'no-multiple-empty-lines': ['warn', { max: 1 }],
     'no-trailing-spaces': 'warn',
     'no-useless-rename': ['warn'],
     'no-var': ['warn'],
