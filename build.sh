@@ -11,7 +11,7 @@ export CONTEXT_NAME=project-template
 export SERVICE_NAME=template-web
 export VERSION
 
-trap 'rm -rf configuration' EXIT
+trap 'rm -rf configuration; docker-compose down' EXIT
 
 # set up build.properties for Labretto deploy
 if $CI; then
