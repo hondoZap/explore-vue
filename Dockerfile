@@ -15,13 +15,13 @@ ARG VERSION
 RUN dotnet build --no-restore \
  && dotnet publish --no-restore -c Release -o /publish ProjectTemplate
 
-FROM $DOCKER_REGISTRY/node:16 as ui-cache
+FROM $DOCKER_REGISTRY/node:18 as ui-cache
 COPY ui /src/
 RUN mkdir /proj && cd /src && \
   find . -type f -a \( -iname 'package.json' -o -iname 'package-lock.json' \) \
     -exec cp --parents "{}" /proj/ \;
 
-FROM $DOCKER_REGISTRY/node:16 as ui
+FROM $DOCKER_REGISTRY/node:18 as ui
 WORKDIR /src
 COPY --from=ui-cache /proj ./
 RUN npm ci
