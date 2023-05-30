@@ -13,6 +13,8 @@ services:
     build:
       <<: *base-build
       target: api
-    command: bash -c 'trap "chmod 777 -R TestResults" EXIT; dotnet test --no-restore --no-build'
+    command: dotnet test --no-restore --no-build
     volumes:
-      - ./api/TestResults:/src/TestResults
+      - type: bind
+        source: ./api/TestResults
+        target: /src/TestResults

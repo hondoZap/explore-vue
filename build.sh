@@ -47,6 +47,7 @@ fi & PUSH_IMAGE=$!
 
 if $RUN_TESTS; then
   wait "$GET_CONFIG"
+  mkdir -p api/TestResults
   docker-compose run tests
 else
   echo IGNORING TESTS FOR THIS RUN
