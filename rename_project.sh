@@ -3,7 +3,7 @@
 self_name='rename_project.sh'
 
 main() {
-  read -p 'Enter the context name (kebab-case): ' context_name
+  read -p 'Enter the context name (including silo if present: context-name.silo): ' context_name
   read -p 'Enter the service name (hit enter for the default: web): ' service_name
   read -p 'Enter the solution name (PascalCase): ' solution_name
   read -p 'Enter the human-readable app name (My App): ' app_name
