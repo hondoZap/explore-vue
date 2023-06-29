@@ -5,6 +5,8 @@
     <Authors>Labatt Food Service</Authors>
     <Company>Labatt Food Service</Company>
     <ImplicitUsings>enable</ImplicitUsings>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -16,6 +18,7 @@
     <PackageReference Include="Labatt.Core.WebApi" Version="3.*" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.*" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.*" />
     <PackageReference Include="Moq" Version="4.*" />
     <PackageReference Include="NUnit" Version="3.*" />

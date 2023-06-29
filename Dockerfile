@@ -12,7 +12,7 @@ RUN dotnet restore
 
 COPY --from=api-cache /src ./
 ARG VERSION
-RUN dotnet build --no-restore \
+RUN dotnet build --warnaserror --no-restore \
  && dotnet publish --no-restore -c Release -o /publish ProjectTemplate
 
 FROM $DOCKER_REGISTRY/node:18 as ui-cache
