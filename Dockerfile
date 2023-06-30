@@ -8,7 +8,7 @@ RUN mkdir /proj && cd /src && \
 FROM $DOCKER_REGISTRY/dotnet-sdk-6.0 as api
 WORKDIR /src
 COPY --from=api-cache /proj ./
-RUN dotnet restore
+RUN dotnet restore --verbosity normal
 
 COPY --from=api-cache /src ./
 ARG VERSION
