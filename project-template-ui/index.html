@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project_Template</title>
+    <style>
+      @keyframes delayed-show {
+        to {
+          visibility: visible;
+        }
+      }
+
+      .delayed-show {
+        font-size: 2rem;
+        visibility: hidden;
+        animation: 0s linear 2s forwards delayed-show;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>
+        We're sorry but Project_Template doesn't work properly without JavaScript enabled.
+        Please enable it to continue.
+      </strong>
+    </noscript>
+    <div id="app">
+      <div class="delayed-show">
+        <p>Something went wrong.</p>
+        <a href="#" onclick="forceReloadApp()">
+          - Click here to log in -
+        </a>
+      </div>
+    </div>
+    <script>
+      async function forceReloadApp() {
+        if ('serviceWorker' in navigator) {
+          const regs = await navigator.serviceWorker.getRegistrations()
+          for (const r of regs) {
+            await r.unregister()
+          }
+        }
+        window.location.href = '/login' + window.location.hash
+        return false
+      }
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+
+  </body>
+</html>

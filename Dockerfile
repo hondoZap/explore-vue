@@ -1,6 +1,6 @@
 ARG DOCKER_REGISTRY
 FROM $DOCKER_REGISTRY/dotnet-sdk-6.0 as api-cache
-COPY api /src/
+COPY project-template-api /src/
 RUN mkdir /proj && cd /src && \
   find . -type f -a \( -iname '*.sln' -o -iname '*.csproj' \) \
     -exec cp --parents "{}" /proj/ \;
@@ -16,7 +16,7 @@ RUN dotnet build --warnaserror --no-restore \
  && dotnet publish --no-restore -c Release -o /publish ProjectTemplate
 
 FROM $DOCKER_REGISTRY/node:18 as ui-cache
-COPY ui /src/
+COPY project-template-ui /src/
 RUN mkdir /proj && cd /src && \
   find . -type f -a \( -iname 'package.json' -o -iname 'package-lock.json' \) \
     -exec cp --parents "{}" /proj/ \;

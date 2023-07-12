@@ -26,15 +26,10 @@ jobs:
       - name: Download Labretto config
         run: ~/labatt_configuration/get_configuration.sh ${SERVICE_NAME} ${CONTEXT_NAME}
 
-      - name: Test
+      - name: API Tests
         run: |
-          mkdir -p api/TestResults
-          docker-compose run tests
-
-      - name: Clean up Labretto config
-        if: always()
-        run: |
-          rm -rf configuration
+          mkdir -p project-template-api/TestResults
+          docker-compose run api-tests
 
       - name: Upload test results
         uses: dorny/test-reporter@v1
@@ -44,3 +39,12 @@ jobs:
           path: "**/*.trx"
           reporter: dotnet-trx
           fail-on-error: false
+
+      - name: UI Tests
+        run: docker-compose run ui-tests
+
+      - name: Clean up Labretto config and Docker containers
+        if: always()
+        run: |
+          rm -rf configuration
+          docker-compose down

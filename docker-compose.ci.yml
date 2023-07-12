@@ -3,6 +3,6 @@ version: "3.4"
 services:
   template-web:
     image: ${DOCKER_REGISTRY}/${CONTEXT_NAME}-${SERVICE_NAME}:${VERSION}
-  tests:
+  api-tests:
     volumes:
       - ./configuration:/labatt

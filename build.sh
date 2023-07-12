@@ -11,7 +11,7 @@ export CONTEXT_NAME=project-template
 export SERVICE_NAME=template-web
 export VERSION
 
-trap 'rm -rf configuration; docker-compose down' EXIT
+trap 'rm -rf configuration; docker-compose down' ERR EXIT
 
 # set up build.properties for Labretto deploy
 if $CI; then
@@ -47,8 +47,9 @@ fi & PUSH_IMAGE=$!
 
 if $RUN_TESTS; then
   wait "$GET_CONFIG"
-  mkdir -p api/TestResults
-  docker-compose run tests
+  mkdir -p project-template-api/TestResults
+  docker-compose run api-tests
+  docker-compose run ui-tests
 else
   echo IGNORING TESTS FOR THIS RUN
 fi

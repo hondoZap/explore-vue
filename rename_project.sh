@@ -15,6 +15,9 @@ main() {
 
   replace_in_all_file_names 'ProjectTemplate' "$solution_name"
 
+  mv project-template-api "$context_name-api"
+  mv project-template-ui "$context_name-ui"
+
   rm "$self_name"
 
   git add --all && git commit -m 'Rename project files'

@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import { CurrentUser } from '@/types'
 
 const refreshPageOnExpiredLfsSession = () => {
   let reloading = false
@@ -21,9 +22,8 @@ const axios = Axios.create()
 axios.interceptors.response.use(undefined, refreshPageOnExpiredLfsSession())
 
 export default {
-  async getExample() {
-    const resp = await axios.get('/api/example')
-    return resp.data
+  async getCurrentUser() {
+    const resp = await axios.get('/api/users/current')
+    return CurrentUser.parse(resp.data)
   },
 }
-

@@ -9,12 +9,17 @@ x-base-build: &base-build
 services:
   template-web:
     build: *base-build
-  tests:
+  api-tests:
     build:
       <<: *base-build
       target: api
     command: dotnet test --no-restore --no-build
     volumes:
       - type: bind
-        source: ./api/TestResults
+        source: ./project-template-api/TestResults
         target: /src/TestResults
+  ui-tests:
+    build:
+      <<: *base-build
+      target: ui
+    command: npm run test:unit

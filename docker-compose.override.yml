@@ -18,7 +18,8 @@ services:
     <<: *base
     ports:
       - 8000:8000
-  tests: *base
+  api-tests: *base
+  ui-tests: *base
 
 volumes:
   labatt:
