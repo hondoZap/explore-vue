@@ -4,6 +4,7 @@ x-base-build: &base-build
   context: .
   args:
     - DOCKER_REGISTRY
+    - DOTNET_RESTORE_VERBOSITY=${DOTNET_RESTORE_VERBOSITY:-minimal}
     - VERSION
 
 services:
