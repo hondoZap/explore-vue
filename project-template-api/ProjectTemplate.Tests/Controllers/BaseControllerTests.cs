@@ -8,7 +8,7 @@ namespace ProjectTemplate.Tests.Controllers;
 
 public class BaseControllerTests
 {
-    protected WebApplicationFactory<Program> Application { get; private set; }
+    private protected WebApplicationFactory<Program> Application { get; private set; }
     protected HttpClient Client { get; private set; }
 
     [SetUp]

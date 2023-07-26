@@ -31,5 +31,3 @@ app.UseLabatt();
 app.MapGet("/login", ctx => { ctx.Response.Redirect("/"); return Task.CompletedTask; });
 
 app.Run();
-
-public partial class Program { }
