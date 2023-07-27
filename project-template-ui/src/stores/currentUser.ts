@@ -1,6 +1,6 @@
 import { ref, onMounted } from 'vue'
 import { defineStore } from 'pinia'
-import { CurrentUser } from '@/types'
+import type { CurrentUser } from '@/types'
 import api from '@/api'
 
 export const useCurrentUser = defineStore('currentUser', () => {
