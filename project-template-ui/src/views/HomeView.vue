@@ -18,6 +18,6 @@ const message = computed(() => {
   if (!currentUserStore.user) {
     return 'No user'
   }
-  return `Hello, ${currentUserStore.user.fullName}!`
+  return `Hello, this is some code ${currentUserStore.user.fullName}!`
 })
 </script>
