@@ -14,12 +14,14 @@
         </v-btn>
         <v-btn
           variant="text"
-          :to="{ name: 'checkout' }">
+          :to="{ name: 'checkout' }"
+        >
           Checkout
         </v-btn>
         <v-btn
           variant="text"
-          :to="{ name: 'item'}">
+          :to="{ name: 'item'}"
+        >
           Item
         </v-btn>
       </v-container>
