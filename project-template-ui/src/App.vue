@@ -3,14 +3,24 @@
     <v-app-bar>
       <v-container class="fill-height d-flex align-center">
         <v-toolbar-title>
-          Project_Template
+          Labatt Marketplace
         </v-toolbar-title>
 
         <v-btn
           variant="text"
-          :to="{ name: 'home' }"
+          :to="{ name: 'marketplace' }"
         >
           Home
+        </v-btn>
+        <v-btn
+          variant="text"
+          :to="{ name: 'checkout' }">
+          Checkout
+        </v-btn>
+        <v-btn
+          variant="text"
+          :to="{ name: 'item'}">
+          Item
         </v-btn>
       </v-container>
     </v-app-bar>

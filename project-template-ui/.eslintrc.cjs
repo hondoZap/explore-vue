@@ -29,5 +29,6 @@ module.exports = {
     'object-shorthand': ['warn'], 'quotes': ['warn', 'single', { avoidEscape: true }],
     'semi': ['warn', 'never'],
     'vue/valid-v-slot': ['error', { allowModifiers: true }],
+    'vue/comment-directive' : 0,
   },
 }

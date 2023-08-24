@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'MarketPlace',
+      name: 'marketplace',
       component: MarketPlaceView,
     },
     {
@@ -21,7 +21,7 @@ const router = createRouter({
       path: '/checkout',
       name: 'checkout',
       component: CheckoutView,
-    }
+    },
   ],
 })
 
