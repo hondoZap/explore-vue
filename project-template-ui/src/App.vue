@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar>
+    <v-app-bar
+      color="indigo-darken-2"
+      flat
+    >
       <v-container class="fill-height d-flex align-center">
         <v-toolbar-title>
           Labatt Marketplace
@@ -10,7 +13,7 @@
           variant="text"
           :to="{ name: 'marketplace' }"
         >
-          Home
+          Market
         </v-btn>
         <v-btn
           variant="text"

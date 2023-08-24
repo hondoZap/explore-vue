@@ -2,6 +2,6 @@
   <h1>Swag</h1>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 
 </script>

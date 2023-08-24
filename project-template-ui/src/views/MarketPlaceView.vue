@@ -4,11 +4,21 @@
     bg-color="indigo-darken-2"
     slider-color="orange"
   >
-    <v-tab>Sales</v-tab>
-    <v-tab>Swag</v-tab>
-    <v-tab>Ideas</v-tab>
-    <v-tab>Special Requests</v-tab>
-    <v-tab>Clearance</v-tab>
+    <v-tab to="/market/sales">
+      Sales
+    </v-tab>
+    <v-tab to="/market/swag">
+      Swag
+    </v-tab>
+    <v-tab to="/market/ideas">
+      Ideas
+    </v-tab>
+    <v-tab to="/market/specialrequests">
+      Special Requests
+    </v-tab>
+    <v-tab to="/market/clearance">
+      Clearance
+    </v-tab>
   </v-tabs>
   <v-carousel>
     <v-carousel-item
@@ -24,6 +34,7 @@
       cover
     />
   </v-carousel>
+  <RouterView />
 </template>
 
 <script lang="ts" setup>
